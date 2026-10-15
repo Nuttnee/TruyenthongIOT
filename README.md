@@ -21,10 +21,7 @@
 | **B3** | Đồng hồ báo thức | Arduino Uno, RTC DS1307, LCD I²C, EEPROM và ngắt nút nhấn | [Mở B3](./B3) |
 | **B4** | Kết quả thực hành | Hình ảnh ghi nhận kết quả của bài | [Mở B4](./B4) |
 | **B5** | Bluetooth & BLE | Mô phỏng HC-05, giao tiếp UART và BLE Server điều khiển RGB LED | [Mở B5](./B5) |
-| **B6** | — | Chưa có nội dung | — |
-| **B7** | — | Chưa có nội dung | — |
 | **B8** | ESPHome | ESP32-S3, Web Server và hiệu ứng LED RGB WS2812 | [Mở B8](./B8) |
-| **B9** | — | Chưa có nội dung | — |
 | **B10** | Kết quả thực hành | Hình ảnh ghi nhận kết quả của bài | [Mở B10](./B10) |
 | **B11** | — | Chưa có nội dung | — |
 | **B12** | MQTT | ESP32 gửi dữ liệu nhiệt độ/độ ẩm dạng JSON đến Mosquitto Broker | [Mở B12](./B12) |
