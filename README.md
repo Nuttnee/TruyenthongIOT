@@ -23,7 +23,6 @@
 | **B5** | Bluetooth & BLE | Mô phỏng HC-05, giao tiếp UART và BLE Server điều khiển RGB LED | [Mở B5](./B5) |
 | **B8** | ESPHome | ESP32-S3, Web Server và hiệu ứng LED RGB WS2812 | [Mở B8](./B8) |
 | **B10** | Kết quả thực hành | Hình ảnh ghi nhận kết quả của bài | [Mở B10](./B10) |
-| **B11** | — | Chưa có nội dung | — |
 | **B12** | MQTT | ESP32 gửi dữ liệu nhiệt độ/độ ẩm dạng JSON đến Mosquitto Broker | [Mở B12](./B12) |
 | **B13** | CoAP | So sánh CON/NON, ACK và retransmission bằng ESP32, Node.js, Wireshark | [Mở B13](./B13) |
 
