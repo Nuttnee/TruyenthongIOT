@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Hand-written stand-in for `kicad-cli sch export netlist --format kicadxml`
+     until the schematic is drawn in KiCad.  Pin numbers and names follow
+     kicad-symbols MCU_Module:Arduino_UNO_R3, Device:R and Device:LED. -->
+<export version="E">
+  <design>
+    <source>blink.kicad_sch</source>
+    <tool>hand-written (ProCAD fixture F1)</tool>
+  </design>
+  <components>
+    <comp ref="A1">
+      <value>Arduino_UNO_R3</value>
+      <footprint>Module:Arduino_UNO_R3</footprint>
+      <fields>
+        <field name="Footprint">Module:Arduino_UNO_R3</field>
+        <field name="ProCAD.Firmware">blink.hex</field>
+      </fields>
+      <libsource lib="MCU_Module" part="Arduino_UNO_R3" description="Arduino UNO Microcontroller Module, release 3"/>
+      <property name="ProCAD.Firmware" value="blink.hex"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>0b6f2c3e-0001-4000-8000-000000000001</tstamps>
+    </comp>
+    <comp ref="R1">
+      <value>220</value>
+      <fields>
+        <field name="Footprint">Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>0b6f2c3e-0001-4000-8000-000000000002</tstamps>
+    </comp>
+    <comp ref="D1">
+      <value>LED</value>
+      <fields>
+        <field name="Footprint">LED_THT:LED_D5.0mm</field>
+      </fields>
+      <libsource lib="Device" part="LED" description="Light emitting diode"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>0b6f2c3e-0001-4000-8000-000000000003</tstamps>
+    </comp>
+  </components>
+  <nets>
+    <net code="1" name="+5V" class="Default">
+      <node ref="A1" pin="5" pinfunction="+5V" pintype="power_out"/>
+    </net>
+    <net code="2" name="GND" class="Default">
+      <node ref="A1" pin="6" pinfunction="GND" pintype="power_in"/>
+      <node ref="A1" pin="7" pinfunction="GND" pintype="power_in"/>
+      <node ref="A1" pin="29" pinfunction="GND" pintype="power_in"/>
+      <node ref="D1" pin="1" pinfunction="K" pintype="passive"/>
+    </net>
+    <net code="3" name="Net-(A1-D13)" class="Default">
+      <node ref="A1" pin="28" pinfunction="D13" pintype="bidirectional"/>
+      <node ref="R1" pin="1" pintype="passive"/>
+    </net>
+    <net code="4" name="Net-(D1-A)" class="Default">
+      <node ref="D1" pin="2" pinfunction="A" pintype="passive"/>
+      <node ref="R1" pin="2" pintype="passive"/>
+    </net>
+    <net code="5" name="unconnected-(A1-D0{slash}RX-Pad15)" class="Default">
+      <node ref="A1" pin="15" pinfunction="D0/RX" pintype="bidirectional+no_connect"/>
+    </net>
+  </nets>
+</export>

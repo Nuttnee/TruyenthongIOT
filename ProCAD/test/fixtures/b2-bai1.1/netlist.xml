@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Hand-written stand-in for `kicad-cli sch export netlist --format kicadxml`.
+     Circuit of B2 bai 1.1: ARD1 bridges its USB Serial to SoftwareSerial on
+     D9 (RX) / D8 (TX), wired to the hardware UART of ARD2.  ARD2 drives three
+     LEDs active-low on D2..D4. -->
+<export version="E">
+  <design>
+    <source>b2-bai1.1.kicad_sch</source>
+    <tool>hand-written (ProCAD fixture F3)</tool>
+  </design>
+  <components>
+    <comp ref="ARD1">
+      <value>Arduino_UNO_R3</value>
+      <libsource lib="MCU_Module" part="Arduino_UNO_R3" description="Arduino UNO Microcontroller Module, release 3"/>
+      <property name="ProCAD.Firmware" value="adr1.hex"/>
+      <sheetpath names="/" tstamps="/"/>
+    </comp>
+    <comp ref="ARD2">
+      <value>Arduino_UNO_R3</value>
+      <libsource lib="MCU_Module" part="Arduino_UNO_R3" description="Arduino UNO Microcontroller Module, release 3"/>
+      <property name="ProCAD.Firmware" value="adr2.hex"/>
+      <sheetpath names="/" tstamps="/"/>
+    </comp>
+    <comp ref="R1"><value>330</value><libsource lib="Device" part="R" description="Resistor"/><sheetpath names="/" tstamps="/"/></comp>
+    <comp ref="R2"><value>330</value><libsource lib="Device" part="R" description="Resistor"/><sheetpath names="/" tstamps="/"/></comp>
+    <comp ref="R3"><value>330</value><libsource lib="Device" part="R" description="Resistor"/><sheetpath names="/" tstamps="/"/></comp>
+    <comp ref="D1"><value>LED1</value><libsource lib="Device" part="LED" description="Light emitting diode"/><sheetpath names="/" tstamps="/"/></comp>
+    <comp ref="D2"><value>LED2</value><libsource lib="Device" part="LED" description="Light emitting diode"/><sheetpath names="/" tstamps="/"/></comp>
+    <comp ref="D3"><value>LED3</value><libsource lib="Device" part="LED" description="Light emitting diode"/><sheetpath names="/" tstamps="/"/></comp>
+  </components>
+  <nets>
+    <net code="1" name="+5V" class="Default">
+      <node ref="ARD1" pin="5" pinfunction="+5V" pintype="power_out"/>
+      <node ref="ARD2" pin="5" pinfunction="+5V" pintype="power_out"/>
+      <node ref="R1" pin="1" pintype="passive"/>
+      <node ref="R2" pin="1" pintype="passive"/>
+      <node ref="R3" pin="1" pintype="passive"/>
+    </net>
+    <net code="2" name="GND" class="Default">
+      <node ref="ARD1" pin="6" pinfunction="GND" pintype="power_in"/>
+      <node ref="ARD2" pin="6" pinfunction="GND" pintype="power_in"/>
+    </net>
+    <net code="3" name="/ARD1_TX" class="Default">
+      <node ref="ARD1" pin="23" pinfunction="D8" pintype="bidirectional"/>
+      <node ref="ARD2" pin="15" pinfunction="D0/RX" pintype="bidirectional"/>
+    </net>
+    <net code="4" name="/ARD2_TX" class="Default">
+      <node ref="ARD2" pin="16" pinfunction="D1/TX" pintype="bidirectional"/>
+      <node ref="ARD1" pin="24" pinfunction="D9" pintype="bidirectional"/>
+    </net>
+    <net code="5" name="Net-(D1-A)" class="Default">
+      <node ref="D1" pin="2" pinfunction="A" pintype="passive"/>
+      <node ref="R1" pin="2" pintype="passive"/>
+    </net>
+    <net code="6" name="Net-(D2-A)" class="Default">
+      <node ref="D2" pin="2" pinfunction="A" pintype="passive"/>
+      <node ref="R2" pin="2" pintype="passive"/>
+    </net>
+    <net code="7" name="Net-(D3-A)" class="Default">
+      <node ref="D3" pin="2" pinfunction="A" pintype="passive"/>
+      <node ref="R3" pin="2" pintype="passive"/>
+    </net>
+    <net code="8" name="/LED1" class="Default">
+      <node ref="ARD2" pin="17" pinfunction="D2" pintype="bidirectional"/>
+      <node ref="D1" pin="1" pinfunction="K" pintype="passive"/>
+    </net>
+    <net code="9" name="/LED2" class="Default">
+      <node ref="ARD2" pin="18" pinfunction="D3" pintype="bidirectional"/>
+      <node ref="D2" pin="1" pinfunction="K" pintype="passive"/>
+    </net>
+    <net code="10" name="/LED3" class="Default">
+      <node ref="ARD2" pin="19" pinfunction="D4" pintype="bidirectional"/>
+      <node ref="D3" pin="1" pinfunction="K" pintype="passive"/>
+    </net>
+  </nets>
+</export>

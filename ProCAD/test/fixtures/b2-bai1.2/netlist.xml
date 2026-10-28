@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Hand-written stand-in for `kicad-cli sch export netlist --format kicadxml`.
+     Circuit of B2 bai 1.2: button on D2 to GND (INPUT_PULLUP), LED on D13
+     wired active-low (+5V -> R1 -> D1 anode, cathode -> D13). -->
+<export version="E">
+  <design>
+    <source>b2-bai1.2.kicad_sch</source>
+    <tool>hand-written (ProCAD fixture F2)</tool>
+  </design>
+  <components>
+    <comp ref="A1">
+      <value>Arduino_UNO_R3</value>
+      <fields>
+        <field name="ProCAD.Firmware">sketch_sep3a.hex</field>
+      </fields>
+      <libsource lib="MCU_Module" part="Arduino_UNO_R3" description="Arduino UNO Microcontroller Module, release 3"/>
+      <property name="ProCAD.Firmware" value="sketch_sep3a.hex"/>
+      <sheetpath names="/" tstamps="/"/>
+    </comp>
+    <comp ref="SW1">
+      <value>BTN</value>
+      <libsource lib="Switch" part="SW_Push" description="Push button switch, generic, two pins"/>
+      <sheetpath names="/" tstamps="/"/>
+    </comp>
+    <comp ref="R1">
+      <value>330</value>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+    </comp>
+    <comp ref="D1">
+      <value>LED</value>
+      <libsource lib="Device" part="LED" description="Light emitting diode"/>
+      <sheetpath names="/" tstamps="/"/>
+    </comp>
+  </components>
+  <nets>
+    <net code="1" name="+5V" class="Default">
+      <node ref="A1" pin="5" pinfunction="+5V" pintype="power_out"/>
+      <node ref="R1" pin="1" pintype="passive"/>
+    </net>
+    <net code="2" name="GND" class="Default">
+      <node ref="A1" pin="6" pinfunction="GND" pintype="power_in"/>
+      <node ref="SW1" pin="2" pinfunction="2" pintype="passive"/>
+    </net>
+    <net code="3" name="/BTN" class="Default">
+      <node ref="A1" pin="17" pinfunction="D2" pintype="bidirectional"/>
+      <node ref="SW1" pin="1" pinfunction="1" pintype="passive"/>
+    </net>
+    <net code="4" name="Net-(D1-A)" class="Default">
+      <node ref="D1" pin="2" pinfunction="A" pintype="passive"/>
+      <node ref="R1" pin="2" pintype="passive"/>
+    </net>
+    <net code="5" name="/LED" class="Default">
+      <node ref="A1" pin="28" pinfunction="D13" pintype="bidirectional"/>
+      <node ref="D1" pin="1" pinfunction="K" pintype="passive"/>
+    </net>
+  </nets>
+</export>
