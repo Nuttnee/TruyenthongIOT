@@ -1,6 +1,0 @@
-node_modules/
-# Anchored: an unanchored "out/" also hid src/out/ from git.
-/dist/
-/out/
-*.vcd
-*.jsonl

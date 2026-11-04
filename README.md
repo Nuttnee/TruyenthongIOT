@@ -92,6 +92,9 @@ TruyenthongIOT/
 └── B13/             # CoAP Client/Server
 ```
 
+> [!NOTE]
+> ProCAD, trình mô phỏng mạch trên schematic KiCad (thay cho Proteus khi làm các bài trên), là một ứng dụng riêng và đã chuyển sang repository [Nuttnee/ProCAD](https://github.com/Nuttnee/ProCAD).
+
 > [!IMPORTANT]
 > Thông tin Wi-Fi và MQTT trong mã nguồn được thay bằng giá trị mẫu. Không đưa mật khẩu thật lên repository công khai.
 
